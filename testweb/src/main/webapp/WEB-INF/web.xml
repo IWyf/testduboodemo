@@ -1,0 +1,24 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+
+
+        <servlet>
+            <servlet-name>springmvcservlet</servlet-name>
+            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+            <init-param>
+                <param-name>contextConfigLocation</param-name>
+                <param-value>classpath:Spring-MVC.xml</param-value>
+            </init-param>
+            <!--启动项目的时候就创建这个 servlet 对象 这个参数必须在init-param之后出现-->
+            <load-on-startup>2</load-on-startup>
+        </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>springmvcservlet</servlet-name>
+        <url-pattern>*.action</url-pattern>
+    </servlet-mapping>
+</web-app>
